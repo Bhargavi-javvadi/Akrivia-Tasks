@@ -1,0 +1,27 @@
+<div class="login-container">
+    <h2>Login</h2>
+
+    <div *ngIf="loginMessage" class="login-message">
+        {{ loginMessage }}
+    </div>
+
+    <form (ngSubmit)="login()">
+        <div>
+            <label for="name">Username</label>
+            <input [(ngModel)]="name" id="name" type="text" placeholder="Enter your name" name="name" required />
+        </div>
+        <div>
+            <label for="password">Password</label>
+            <input [(ngModel)]="password" id="password" type="password" placeholder="Enter your password" name="password" required />
+        </div>
+
+        <button type="submit">Login</button>
+    </form>
+
+   <!-- "Back" link for navigation -->
+<a class="back-link" (click)="goBack()">Back</a>
+
+<!-- "Register" link at the bottom right -->
+<a class="register-link" (click)="goToRegister()">Register</a>
+
+</div>
